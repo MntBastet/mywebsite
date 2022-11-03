@@ -8,6 +8,10 @@ tag:
 ---
 
 # C/C++
+
+---
+
+## 【基本配置】
 ### 插件
 > - C/C++
 > - Code Runner
@@ -232,6 +236,37 @@ tag:
 - VS Code调试.c/.cpp时打开的文件夹中应包含以上.json
 - 可将.json打包在一个文件夹.vscode中
 - 插件和.json的配置先后没有要求
+
+---
+
+## 【进阶配置】
+### 配置文件
+#### 头文件 c_cpp_properties.json
+```json
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "macFrameworkPath": [ //在此处添加头文件路径
+                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "macos-clang-arm64"
+        }
+    ],
+    "version": 4
+}
+```
+##### or
+```
+ F1 C/C++:Edit Configurations(JSON)
+```
 
 ---
 
